@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Kashyap | Aerospace Engineer</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon - You can replace this with your own -->
+    <link rel="icon" href="https://placehold.co/32x32/000000/FFFFFF?text=AK" type="image/png">
+
+    <style>
+        /* Custom styles for a smooth experience */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a192f; /* A deep navy blue for a professional tech look */
+            color: #ccd6f6; /* A light, soft color for text */
+        }
+        .accent-color {
+            color: #64ffda; /* A bright mint/cyan for accents and highlights */
+        }
+        .accent-bg {
+            background-color: #64ffda;
+        }
+        .card-bg {
+            background-color: #112240; /* A slightly lighter navy for cards and sections */
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #64ffda;
+        }
+        .section-heading {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            font-size: 1.75rem; /* 28px */
+            font-weight: 700;
+            color: #e6f1ff;
+        }
+        .section-heading::after {
+            content: '';
+            display: block;
+            position: relative;
+            top: 2px;
+            width: 200px;
+            height: 1px;
+            margin-left: 20px;
+            background-color: #233554;
+        }
+        .project-card:hover .project-title {
+            color: #64ffda;
+        }
+        /* Timeline specific styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid #233554;
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #64ffda;
+            border: 3px solid #0a192f;
+        }
+        /* Zoom effect for the profile picture */
+        .profile-photo-container img {
+            transition: transform 0.3s ease-out;
+        }
+        .profile-photo-container:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="leading-normal tracking-normal">
+
+    <!-- Header & Navigation -->
+    <header class="fixed w-full z-30 top-0 bg-opacity-90 backdrop-blur-sm transition-all duration-300" id="header">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold accent-color">AK</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#hobbies" class="nav-link">Hobbies</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <!-- IMPORTANT: Replace '#' with the actual link to your resume PDF -->
+                <a href="#" id="resume-link" target="_blank" class="px-4 py-2 border border-[#64ffda] rounded text-[#64ffda] hover:bg-[#64ffda] hover:bg-opacity-10 transition-colors duration-300">Resume</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#112240] p-4">
+            <a href="#about" class="block py-2 text-center nav-link">About</a>
+            <a href="#experience" class="block py-2 text-center nav-link">Experience</a>
+            <a href="#projects" class="block py-2 text-center nav-link">Projects</a>
+            <a href="#timeline" class="block py-2 text-center nav-link">Timeline</a>
+            <a href="#skills" class="block py-2 text-center nav-link">Skills</a>
+            <a href="#hobbies" class="block py-2 text-center nav-link">Hobbies</a>
+            <a href="#contact" class="block py-2 text-center nav-link">Contact</a>
+            <!-- IMPORTANT: Replace '#' with the actual link to your resume PDF -->
+            <a href="#" id="resume-link-mobile" target="_blank" class="block mt-2 text-center w-full px-4 py-2 border border-[#64ffda] rounded text-[#64ffda] hover:bg-[#64ffda] hover:bg-opacity-10 transition-colors duration-300">Resume</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 lg:px-20 pt-24">
+
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center">
+            <div class="max-w-4xl">
+                <p class="text-lg accent-color mb-4">Hi, my name is</p>
+                <h1 class="text-4xl md:text-7xl font-bold text-[#ccd6f6]">Aman Kashyap.</h1>
+                <h2 class="text-4xl md:text-7xl font-bold text-[#8892b0]">I build intelligent solutions for complex problems.</h2>
+                <p class="mt-6 max-w-xl text-lg text-[#8892b0]">
+                    I'm a final-year Aerospace Engineering student at <span class="accent-color">IIT Kanpur</span>, passionate about the intersection of aerospace, machine learning, and AI. I love tackling complex challenges and building intelligent solutions to real-world problems.
+                </p>
+                <a href="#projects" class="inline-block mt-8 px-8 py-4 text-lg font-semibold accent-bg text-[#0a192f] rounded hover:bg-opacity-90 transition-all duration-300">
+                    Check out my work!
+                </a>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-24">
+            <h2 class="section-heading mb-12">About Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
+                <div class="md:col-span-3 text-[#8892b0] space-y-4 text-lg">
+                    <p>
+                        Hello! I'm Aman, and my fascination with flight began at a young age. This passion led me to pursue a B.Tech in Aerospace Engineering at one of India's premier institutions, IIT Kanpur. My coursework has provided me with a strong foundation in fluid dynamics, structural mechanics, and control systems.
+                    </p>
+                    <p>
+                        Beyond the classroom, I am an avid project builder. I thrive in hands-on environments, from designing UAVs to writing simulation software. As the former Head of the <span class="accent-color">Autonomous Underwater Vehicle (AUV)</span> team, I led over 35 students in research and development, qualifying for international competitions like SAUVC Singapore and RoboSub USA.
+                    </p>
+                    <p>
+                        When I'm not studying or working on projects, I enjoy stargazing, reading science fiction, and contributing to open-source projects.
+                    </p>
+                </div>
+                <div class="md:col-span-2 flex justify-center">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-lg overflow-hidden group relative profile-photo-container">
+                        <!-- YOUR PHOTO HERE -->
+                        <img src="http://googleusercontent.com/file_content/5" 
+                             alt="Aman Kashyap and team at IIT Kanpur Flight Laboratory" 
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x400/112240/64ffda?text=Aman';">
+                        <div class="absolute inset-0 border-2 border-[#64ffda] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24">
+            <h2 class="section-heading mb-12">My Experience</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                 <!-- Oasis Infobyte -->
+                <div class="card-bg rounded-lg p-6 shadow-lg">
+                    <div class="flex justify-between items-start flex-wrap">
+                        <div>
+                            <h3 class="text-xl font-bold text-[#e6f1ff]">Data Analyst Intern</h3>
+                            <p class="text-lg accent-color">Oasis Infobyte</p>
+                        </div>
+                        <p class="text-sm text-[#8892b0] whitespace-nowrap mt-2 sm:mt-0">July 2025 - Present</p>
+                    </div>
+                    <ul class="mt-4 list-disc list-inside text-[#8892b0] space-y-2">
+                        <li>Analyzing datasets to identify trends, patterns, and valuable insights.</li>
+                        <li>Creating visualizations and dashboards to communicate findings effectively.</li>
+                        <li>Utilizing Python libraries like Pandas and Matplotlib for data manipulation and plotting.</li>
+                    </ul>
+                </div>
+                <!-- Securefire - E-Commerce -->
+                <div class="card-bg rounded-lg p-6 shadow-lg">
+                    <div class="flex justify-between items-start flex-wrap">
+                        <div>
+                            <h3 class="text-xl font-bold text-[#e6f1ff]">MERN Stack Developer Intern</h3>
+                            <p class="text-lg accent-color">Securefire Safety Products LTD.</p>
+                        </div>
+                        <p class="text-sm text-[#8892b0] whitespace-nowrap mt-2 sm:mt-0">June 2025 - Present</p>
+                    </div>
+                    <ul class="mt-4 list-disc list-inside text-[#8892b0] space-y-2">
+                        <li>Developing a full-stack MERN (MongoDB, Express.js, React, Node.js) e-commerce website.</li>
+                        <li>Building distinct, feature-rich menus for Buyers, Sellers, and an AI Assistant.</li>
+                        <li>Implementing robust back-end services and responsive front-end components.</li>
+                    </ul>
+                </div>
+                 <!-- Securefire - Heat Sensor -->
+                <div class="card-bg rounded-lg p-6 shadow-lg">
+                    <div class="flex justify-between items-start flex-wrap">
+                        <div>
+                            <h3 class="text-xl font-bold text-[#e6f1ff]">Heat Sensor Developer Intern</h3>
+                            <p class="text-lg accent-color">Securefire Safety Products LTD.</p>
+                        </div>
+                        <p class="text-sm text-[#8892b0] whitespace-nowrap mt-2 sm:mt-0">June 2025 - Present</p>
+                    </div>
+                    <ul class="mt-4 list-disc list-inside text-[#8892b0] space-y-2">
+                        <li>Developed a heat sensor with dual temperature thresholds (45°C and 50°C) for firefighter safety.</li>
+                        <li>Engineered distinct buzzer alerts to signal different stages of emergency response.</li>
+                        <li>Currently designing and modeling a compact, coin-sized PCB for the next-generation sensor.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24">
+            <h2 class="section-heading mb-12">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Project Cards -->
+                <div class="project-card card-bg rounded-lg p-6 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300 shadow-lg"><div><div class="flex justify-between items-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 12h.01"/><path d="M16 12h.01"/><path d="M12 16h.01"/><path d="M8 12h.01"/><path d="M8 16h.01"/><path d="M16 16h.01"/></svg><div class="flex space-x-4 text-[#a8b2d1]"></div></div><h3 class="project-title text-xl font-bold text-[#e6f1ff] mb-3 transition-colors duration-300">PINN Surrogate for CFD Simulation</h3><p class="text-[#8892b0]">Developed a Physics-Informed Neural Network (PINN) to emulate high-fidelity CFD simulations, drastically reducing computational costs for aerodynamic predictions.</p></div><div class="mt-4 flex flex-wrap"><span class="text-sm text-[#8892b0] mr-2 mb-2">Python</span><span class="text-sm text-[#8892b0] mr-2 mb-2">Neural Networks</span><span class="text-sm text-[#8892b0] mr-2 mb-2">CFD</span><span class="text-sm text-[#8892b0] mr-2 mb-2">Aerodynamics</span></div></div>
+                <div class="project-card card-bg rounded-lg p-6 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300 shadow-lg"><div><div class="flex justify-between items-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.27 6.96 8.73 5.05 8.73-5.05"/><path d="M12 22.08V12"/></svg><div class="flex space-x-4 text-[#a8b2d1]"></div></div><h3 class="project-title text-xl font-bold text-[#e6f1ff] mb-3 transition-colors duration-300">AR/VR Yoga & Flappy Bird Clone</h3><p class="text-[#8892b0]">Created an immersive VR Yoga guide and an interactive AR trainer using Unity. Received a referral to showcase the software at ICVR2024 and IndiaHCI.</p></div><div class="mt-4 flex flex-wrap"><span class="text-sm text-[#8892b0] mr-2 mb-2">Unity</span><span class="text-sm text-[#8892b0] mr-2 mb-2">AR/VR</span><span class="text-sm text-[#8892b0] mr-2 mb-2">Computer Vision</span><span class="text-sm text-[#8892b0] mr-2 mb-2">C#</span></div></div>
+                <div class="project-card card-bg rounded-lg p-6 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300 shadow-lg"><div><div class="flex justify-between items-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18.5H7"/><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg><div class="flex space-x-4 text-[#a8b2d1]"><a href="https://github.com/Amkrit" target="_blank" class="hover:text-[#64ffda] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></div></div><h3 class="project-title text-xl font-bold text-[#e6f1ff] mb-3 transition-colors duration-300">Movie Review Sentiment Classifier</h3><p class="text-[#8892b0]">Built an ML model using Logistic Regression and TF-IDF to classify movie reviews. Implemented a full ML pipeline from text preprocessing to performance evaluation.</p></div><div class="mt-4 flex flex-wrap"><span class="text-sm text-[#8892b0] mr-2 mb-2">Scikit-learn</span><span class="text-sm text-[#8892b0] mr-2 mb-2">Pandas</span><span class="text-sm text-[#8892b0] mr-2 mb-2">NLP</span><span class="text-sm text-[#8892b0] mr-2 mb-2">Machine Learning</span></div></div>
+                <div class="project-card card-bg rounded-lg p-6 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300 shadow-lg"><div><div class="flex justify-between items-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"/></svg><div class="flex space-x-4 text-[#a8b2d1]"><a href="https://github.com/Amkrit" target="_blank" class="hover:text-[#64ffda] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></div></div><h3 class="project-title text-xl font-bold text-[#e6f1ff] mb-3 transition-colors duration-300">IPL 2025 Website</h3><p class="text-[#8892b0]">Designed a responsive IPL website with match schedules, smart predictions, and a payment system mock-up. Planned for future API integration and deployment.</p></div><div class="mt-4 flex flex-wrap"><span class="text-sm text-[#8892b0] mr-2 mb-2">HTML</span><span class="text-sm text-[#8892b0] mr-2 mb-2">CSS</span><span class="text-sm text-[#8892b0] mr-2 mb-2">JavaScript</span><span class="text-sm text-[#8892b0] mr-2 mb-2">UI/UX</span></div></div>
+            </div>
+        </section>
+
+        <!-- Timeline/Log Section -->
+        <section id="timeline" class="py-24">
+            <h2 class="section-heading mb-12">My Journey</h2>
+            <div id="timeline-container" class="max-w-3xl mx-auto space-y-8">
+                <!-- Timeline items will be dynamically inserted here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24">
+            <h2 class="section-heading mb-12">My Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#8892b0]">
+                <div>
+                    <h3 class="text-xl font-semibold text-[#ccd6f6] mb-4">Languages</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Python</li>
+                        <li>C / C++</li>
+                        <li>HTML & CSS</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-[#ccd6f6] mb-4">Libraries, Software & Frameworks</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Scikit-learn, NumPy, Pandas, SciPy</li>
+                        <li>Matplotlib</li>
+                        <li>MATLAB, LabVIEW</li>
+                        <li>SolidWorks, ANSYS-Fluent, Fusion 360</li>
+                        <li>Flutter, React, Node.js, Express.js</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="py-24">
+            <h2 class="section-heading mb-12">Beyond Engineering</h2>
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-lg text-[#8892b0]">
+                    Outside of my technical pursuits, I'm an avid cricket enthusiast. I love both playing and following the sport, drawing inspiration from the greats. I admire <span class="accent-color">Virat Kohli</span> for his unmatched discipline and relentless drive, and <span class="accent-color">MS Dhoni</span> for his legendary calmness and strategic genius under pressure. These qualities of focus and leadership resonate with my own approach to engineering and problem-solving.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 text-center">
+            <h2 class="text-2xl font-semibold accent-color mb-4">What's Next?</h2>
+            <h3 class="text-4xl md:text-5xl font-bold text-[#e6f1ff] mb-6">Get In Touch</h3>
+            <p class="max-w-2xl mx-auto text-lg text-[#8892b0] mb-8">
+                I'm actively seeking internship opportunities and am always open to discussing new projects, creative ideas, or being part of something amazing. Feel free to reach out using the form below!
+            </p>
+            
+            <!-- Contact Form -->
+            <div class="max-w-2xl mx-auto">
+                <!-- 
+                    IMPORTANT: To make this form work, you need to:
+                    1. Go to https://formspree.io/ and create a new form.
+                    2. Set the recipient email to amankashyap210806@gmail.com
+                    3. Copy the endpoint URL they provide.
+                    4. Paste it into the `action` attribute of the <form> tag below, replacing the placeholder URL.
+                -->
+                <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST" class="text-left space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-[#ccd6f6]">Full Name</label>
+                        <input type="text" name="name" id="name" required class="mt-1 block w-full bg-[#112240] border border-[#233554] rounded-md shadow-sm py-2 px-3 text-[#ccd6f6] focus:outline-none focus:ring-[#64ffda] focus:border-[#64ffda]">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-[#ccd6f6]">Email Address</label>
+                        <input type="email" name="email" id="email" required class="mt-1 block w-full bg-[#112240] border border-[#233554] rounded-md shadow-sm py-2 px-3 text-[#ccd6f6] focus:outline-none focus:ring-[#64ffda] focus:border-[#64ffda]">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-[#ccd6f6]">Contact Number (Optional)</label>
+                        <input type="tel" name="phone" id="phone" class="mt-1 block w-full bg-[#112240] border border-[#233554] rounded-md shadow-sm py-2 px-3 text-[#ccd6f6] focus:outline-none focus:ring-[#64ffda] focus:border-[#64ffda]">
+                    </div>
+                    <div>
+                        <label for="query" class="block text-sm font-medium text-[#ccd6f6]">Message / Query</label>
+                        <textarea name="query" id="query" rows="4" required class="mt-1 block w-full bg-[#112240] border border-[#233554] rounded-md shadow-sm py-2 px-3 text-[#ccd6f6] focus:outline-none focus:ring-[#64ffda] focus:border-[#64ffda]"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="inline-block w-full md:w-auto px-8 py-3 text-lg font-semibold border border-[#64ffda] rounded text-[#64ffda] hover:bg-[#64ffda] hover:bg-opacity-10 transition-colors duration-300">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-[#8892b0] text-sm">
+        <p>Designed & Built by Aman Kashyap</p>
+        <p class="mt-1">Find me on GitHub as <a href="https://github.com/Amkrit" target="_blank" class="accent-color hover:underline">Amkrit</a></p>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        const mobileNavLinks = mobileMenu.querySelectorAll('a');
+        mobileNavLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
+
+        // --- Header Shadow on Scroll ---
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => { window.scrollY > 10 ? header.classList.add('shadow-lg') : header.classList.remove('shadow-lg'); });
+
+        // --- DYNAMIC TIMELINE SCRIPT ---
+        const timelineData = [
+            {
+                type: 'achievement',
+                date: 'July 2025 - Present',
+                title: 'Data Analyst Intern at Oasis Infobyte',
+                content: 'Honing my skills in data analysis, visualization, and manipulation using Python libraries to extract meaningful insights from data.',
+                tags: ['Internship', 'Data Analysis', 'Python']
+            },
+            {
+                type: 'text',
+                date: 'June 2025 - Present',
+                title: 'Intern at Securefire Safety Products LTD.',
+                content: 'Engaged in two key roles: developing heat sensor prototypes for fire safety systems and building the front-end for a new e-commerce website.',
+                tags: ['Internship', 'Web Dev', 'Sensors', 'Hardware']
+            },
+            {
+                type: 'text',
+                date: 'Jan 2025 - Present',
+                title: 'Undergraduate Project: PINN Surrogate Model',
+                content: 'Currently developing a PINN surrogate model to emulate high-fidelity CFD simulations, aiming to significantly reduce computational costs while maintaining prediction accuracy.',
+                tags: ['UGP', 'Research', 'Aerodynamics']
+            },
+            {
+                type: 'achievement',
+                date: 'April 2024',
+                title: 'Led AUV Team to International Competitions',
+                content: 'As Team Head, I led a 35+ member team to qualify for the SAUVC Singapore challenge and register for RoboSub 2024 in California, USA.',
+                tags: ['Leadership', 'AUV', 'Competition']
+            },
+            {
+                type: 'text',
+                date: 'Jan 2024 - April 2024',
+                title: 'Course Project: AR & VR Design',
+                content: 'Created a VR yoga environment and an interactive AR trainer in Unity, leading to a referral from Prof. Amar Behera to present at ICVR2024 and IndiaHCI.',
+                tags: ['Unity', 'AR/VR', 'Project']
+            },
+            {
+                type: 'achievement',
+                date: 'April 2023',
+                title: 'Became Team Head of AUV IIT Kanpur',
+                content: 'Promoted to lead the Autonomous Underwater Vehicle team. I recruited and devised a systematic training method for new members in bot design and ROS.',
+                tags: ['Leadership', 'AUV', 'ROS']
+            },
+             {
+                type: 'text',
+                date: 'June 2022',
+                title: 'Joined AUV Team at IIT Kanpur',
+                content: 'Began my journey with the AUV team, exploring CAD, SolidWorks, ANSYS-Fluent, and the Robot Operating System (ROS). Contributed to the torpedo system for our bot, ANAHITA.',
+                tags: ['Teamwork', 'Robotics', 'Learning']
+            },
+            {
+                type: 'achievement',
+                date: '2021',
+                title: 'Joined IIT Kanpur',
+                content: 'Secured AIR 7454 in JEE Advanced 2021 and began my B.Tech in Aerospace Engineering at the Indian Institute of Technology Kanpur.',
+                tags: ['Education', 'Achievement']
+            }
+        ];
+
+        const timelineContainer = document.getElementById('timeline-container');
+        function buildTimeline() {
+            timelineData.forEach(item => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item pb-8';
+                let itemContent = `<div class="timeline-dot"></div><p class="text-sm accent-color mb-1">${item.date}</p><h3 class="text-xl font-bold text-[#e6f1ff] mb-2">${item.title}</h3>`;
+                if (item.type === 'text' || item.type === 'achievement') { itemContent += `<p class="text-[#8892b0]">${item.content}</p>`; }
+                if (item.tags && item.tags.length > 0) {
+                    itemContent += '<div class="mt-4 flex flex-wrap">';
+                    item.tags.forEach(tag => {
+                        const tagClass = item.type === 'achievement' ? 'accent-bg text-[#0a192f]' : 'bg-[#233554] text-[#a8b2d1]';
+                        itemContent += `<span class="text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded ${tagClass}">${tag}</span>`;
+                    });
+                    itemContent += '</div>';
+                }
+                timelineItem.innerHTML = itemContent;
+                timelineContainer.appendChild(timelineItem);
+            });
+        }
+        document.addEventListener('DOMContentLoaded', buildTimeline);
+    </script>
+
+</body>
+</html>
